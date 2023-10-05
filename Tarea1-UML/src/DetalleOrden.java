@@ -26,4 +26,12 @@ public class DetalleOrden {
     public float calcPeso(){
         return a.getPeso();
     }
+
+    @Override
+    public String toString() {
+        return "\t DetalleOrden{" +
+                " " + a.toString() +
+                ", cantidad=" + cantidad +
+                '}';
+    }
 }

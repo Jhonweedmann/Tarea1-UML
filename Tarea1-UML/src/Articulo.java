@@ -27,4 +27,14 @@ public class Articulo {
     public float getPrecio() {
         return precio;
     }
+
+    @Override
+    public String toString() {
+        return "Articulo{" +
+                "nombre=" + nombre +
+                ", peso'" + peso + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", precio=" + precio +
+                '}';
+    }
 }
