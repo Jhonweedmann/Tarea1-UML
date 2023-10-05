@@ -9,10 +9,15 @@ public class OrdenCompra {
 
     private String estado;
     private ArrayList<DetalleOrden> Lista;
+
+    private DocTributario docTributario;
+    private Pago pago;
+
     /* El constructor acepta un Detalle de orden y lo agregará automaticamente al ArrayList de DetalleOrden. Si se quieren agregar más de uno se tiene que ocupar el metodo "addDetalleOrden"
     */
-    public OrdenCompra(DetalleOrden DO) {
+    public OrdenCompra(DetalleOrden DO, Date fecha) {
         this.DO = DO;
+        this.fecha = fecha;
         Lista = new ArrayList<>();
         Lista.add(DO);
     }
@@ -49,4 +54,26 @@ public class OrdenCompra {
         return sum;
     }
 
+    public String getLista(){
+        String temp = " ";
+        for(int i=0;i<Lista.size();i++){
+            temp += Lista.get(i).toString();
+            temp += "\n";
+            //System.out.println();
+        }
+        return temp;
+    }
+
+    @Override
+    public String toString() {
+        return " " +
+                //"DO=" + DO +
+                //", articulo=" + articulo +
+                //", fecha=" + fecha.toString() +
+                //", estado='" + estado + '\'' +
+                "\n" + getLista() +
+                "docTributario=" + docTributario +
+                "pago=" + pago +
+                '}';
+    }
 }
