@@ -15,13 +15,15 @@ public class OrdenCompra {
     private ArrayList <Pago> ListaPagos;
     private Efectivo efectivo;
     private float PagoTotal=0;
+    //private DocTributario docTributario;
 
     /* El constructor acepta un Detalle de orden y lo agregará automaticamente al ArrayList de DetalleOrden. Si se quieren agregar más de uno se tiene que ocupar el metodo "addDetalleOrden"
     */
-    public OrdenCompra(DetalleOrden DO, Date fecha, Pago pago) {
+    public OrdenCompra(DetalleOrden DO, Date fecha, Pago pago, DocTributario docTributario) {
         this.DO = DO;
         this.fecha = fecha;
         this.pago = pago;
+        this.docTributario = docTributario;
         Lista = new ArrayList<>();
         Lista.add(DO);
         ListaPagos = new ArrayList<>();
@@ -111,7 +113,7 @@ public class OrdenCompra {
 
                 "Orden de Compra: \n" + getLista() +
                 "\t CosteTotal: " + calcPrecio()+ "\n" +
-                //"docTributario=" + docTributario +
+                "\tdocTributario=" + docTributario.toString() + "\n" +
                 "\tpago: " + getPagos() + pago.toString() +"\n" +
                 "\testado='" + getEstado() + '\'' +
                 "\t"+'}';

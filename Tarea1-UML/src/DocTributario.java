@@ -1,9 +1,9 @@
 import java.util.Date;
 
-public class DocTributario {
-    private String numero;
-    private String rut;
-    private Date fecha;
+abstract class DocTributario {
+    protected String numero;
+    protected String rut;
+    protected Date fecha;
 
     public void setNumero(String numero) {
         this.numero = numero;

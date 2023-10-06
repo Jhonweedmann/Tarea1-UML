@@ -5,4 +5,12 @@ public class Boleta extends DocTributario {
         super();
     }
 
+    @Override
+    public String toString() {
+        return "Boleta{" +
+                "numero='" + numero + '\'' +
+                ", rut='" + rut + '\'' +
+                ", fecha=" + fecha +
+                '}';
+    }
 }

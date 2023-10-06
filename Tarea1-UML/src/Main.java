@@ -21,8 +21,18 @@ public class Main {
         Efectivo efectivo = new Efectivo(10000,date);
         Efectivo efectivo2 = new Efectivo(999999,date);
 
+        //DocTributario doc = new DocTributario();
+        Boleta Bo = new Boleta();
+        Bo.setNumero("233");
+        Bo.setFecha(date);
+        Bo.setRut("21.001.001-K");
+        Factura factura = new Factura();
+        factura.setNumero("1293809");
+        factura.setFecha(date);
+        factura.setRut("4.893.245-k");
+        //System.out.println(Bo.toString());
 
-        OrdenCompra Pedido1 = new OrdenCompra(d,date,efectivo);
+        OrdenCompra Pedido1 = new OrdenCompra(d,date,efectivo,Bo);
         //Se pueden agregar más de un DetalleOrden a una OrdenCompra
         Pedido1.addDetalleOrden(c);
         Pedido1.addDetalleOrden(f);
@@ -32,22 +42,19 @@ public class Main {
         Pedido1.addPago(efectivo);
         Pedido1.addPago(efectivo);
 
+
+
+
         Tarjeta tarjeta = new Tarjeta(3500, date, "Tarjeta de credito con 100%de interes", "#42069");
         //System.out.println(tarjeta.toString());
         Transferencia transferencia = new Transferencia(6500, date, "Banko","#69420");
         //System.out.println(transferencia.toString());
-        OrdenCompra Pedido2 = new OrdenCompra(c,date,tarjeta);
-        OrdenCompra Pedido3 = new OrdenCompra(d,date, transferencia);
-        OrdenCompra Pedido4 = new OrdenCompra(detalleOrden4,date,efectivo2);
+        OrdenCompra Pedido2 = new OrdenCompra(c,date,tarjeta,factura);
+        OrdenCompra Pedido3 = new OrdenCompra(d,date, transferencia,Bo);
+        OrdenCompra Pedido4 = new OrdenCompra(detalleOrden4,date,efectivo2,factura);
 
 
 
-        DocTributario doc = new DocTributario();
-        Boleta Bo = new Boleta();
-        Bo.setNumero("233");
-        Bo.setFecha(date);
-        Bo.setRut("21.001.001-K");
-        //System.out.println(Bo.toString());
 
         Direccion direccion = new Direccion("P Sherman calle Wallaby 42 Sidney");
         Cliente Cli = new Cliente("Juan el curioso", "22222",direccion, Pedido1);
