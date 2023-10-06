@@ -32,6 +32,7 @@ public class DetalleOrden {
         return "\t DetalleOrden{" +
                 " " + a.toString() +
                 ", cantidad= " + cantidad +
+                ", PrecioTotal (IVA INCLUIDO)= " + calcPrecio() +
                 '}';
     }
 }

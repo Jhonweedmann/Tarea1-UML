@@ -24,6 +24,7 @@ public class Cliente {
 
  */
 
+
     public String getDireccion() {
         return direccion.getDireccion();
     }
@@ -65,6 +66,7 @@ public class Cliente {
                     "rut= '" + rut + '\'' + "\n" +
                     "direccion= " + direccion.getDireccion() + "\n" +
                     "Orden de Compra= { \n" + getLista() + "\n" +
+                    //"Vuelto de transaccion: "+ efectivo.calcDevolucion(Pedido1.getPagos(),Pedido1.calcPrecio())+ "\n"
                     '}';
         }else{
             return "Cliente{\n" +

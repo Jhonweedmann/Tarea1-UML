@@ -1,22 +1,34 @@
 import java.util.Date;
 
 public class Efectivo extends Pago {
-    private float dinero;
-    public Efectivo(int dinero, int monto, Date fecha) {
+    float monto;
+    public Efectivo(float monto, Date fecha) {
         super(monto, fecha);
-        this.dinero = dinero;
+        fecha = new Date();
+        this.monto = monto;
+    }
+    public float calcDevolucion(float x, float y){
+        return x - y;
     }
 
-    public float calcDevolucion(){
-        if(dinero != getMonto()){
-            if(dinero < getMonto()){
+    @Override
+    public String toString() {
+        return "Efectivo{" +
+                "monto=" + monto +
+                //"fecha= " + fecha;
+                '}';
+    }
+/*
+    public float calcDevolucion(OrdenCompra ordenCompra){
+        if( ordenCompra.calcPrecio() != getMonto() ){
+            if( getMonto() > ordenCompra.calcPrecio()){
+                return getMonto() - ordenCompra.calcPrecio();
+            }else{
                 return 0;
-            }
-            if(dinero > getMonto()){
-               dinero = dinero - getMonto();
-               return dinero;
             }
         }
         return 0;
     }
+
+ */
 }

@@ -9,4 +9,12 @@ public class Tarjeta extends Pago{
         this.tipo = tipo;
         this.numTransaccion = numTransaccion;
     }
+
+    @Override
+    public String toString() {
+        return " con Tarjeta{" +
+                "tipo='" + tipo + '\'' +
+                ", numTransaccion='" + numTransaccion + '\'' +
+                '}';
+    }
 }

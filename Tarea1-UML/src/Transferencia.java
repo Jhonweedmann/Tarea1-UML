@@ -10,4 +10,11 @@ public class Transferencia extends Pago {
         this.numCuenta = numCuenta;
     }
 
+    @Override
+    public String toString() {
+        return " con Transferencia{" +
+                "banco='" + banco + '\'' +
+                ", numCuenta='" + numCuenta + '\'' +
+                '}';
+    }
 }
