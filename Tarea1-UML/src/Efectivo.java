@@ -18,17 +18,4 @@ public class Efectivo extends Pago {
                 //"fecha= " + fecha;
                 '}';
     }
-/*
-    public float calcDevolucion(OrdenCompra ordenCompra){
-        if( ordenCompra.calcPrecio() != getMonto() ){
-            if( getMonto() > ordenCompra.calcPrecio()){
-                return getMonto() - ordenCompra.calcPrecio();
-            }else{
-                return 0;
-            }
-        }
-        return 0;
-    }
-
- */
 }

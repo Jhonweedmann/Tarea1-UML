@@ -15,10 +15,6 @@ public class OrdenCompra {
     private ArrayList <Pago> ListaPagos;
     private Efectivo efectivo;
     private float PagoTotal=0;
-    //private DocTributario docTributario;
-
-    /* El constructor acepta un Detalle de orden y lo agregará automaticamente al ArrayList de DetalleOrden. Si se quieren agregar más de uno se tiene que ocupar el metodo "addDetalleOrden"
-    */
     public OrdenCompra(DetalleOrden DO, Date fecha, Pago pago, DocTributario docTributario) {
         this.DO = DO;
         this.fecha = fecha;
@@ -72,6 +68,9 @@ public class OrdenCompra {
         }
         return temp;
     }
+
+
+    //obtiene la lista de pagos
     public float getPagos(){
         float sum = 0;
         //if(ListaPagos.get(0) == pago)
@@ -81,6 +80,8 @@ public class OrdenCompra {
         return sum;
     }
 
+
+    //Dice si el pago se pudo realizar o no dependiendo de la cantidad que se quiera ingresar de dinero, si cumple o no
     public String getEstado(){
         if(calcPrecio() > getPagos()){
             return "Pago incompleto, falta saldo";
@@ -89,28 +90,11 @@ public class OrdenCompra {
         }
         return"Pago completado exitosamente";
     }
-/*
-    public String infoPago(){
-        for(Efectivo efectivo1 : ListaPagos)
-        if(ListaPagos.getClass() == Efectivo.class.isInstance(efectivo)){
-
-            return "Pagado con una: ";
-
-        }
-        return "xddd"
-    }
-
- */
 
 
     @Override
     public String toString() {
         return " " +
-                //"DO=" + DO +
-                //", articulo=" + articulo +
-                //", fecha=" + fecha.toString() +
-
-
                 "Orden de Compra: \n" + getLista() +
                 "\t CosteTotal: " + calcPrecio()+ "\n" +
                 "\tdocTributario=" + docTributario.toString() + "\n" +

@@ -17,11 +17,9 @@ public class Main {
         DetalleOrden detalleOrden4 = new DetalleOrden(articulo5, 4);
         DetalleOrden detalleOrden5 = new DetalleOrden(articulo4, 4);
 
-        //Si se paga más de la cuenta igual lo tomará como una compra existosa
         Efectivo efectivo = new Efectivo(10000,date);
         Efectivo efectivo2 = new Efectivo(999999,date);
 
-        //DocTributario doc = new DocTributario();
         Boleta Bo = new Boleta();
         Bo.setNumero("233");
         Bo.setFecha(date);
@@ -30,7 +28,6 @@ public class Main {
         factura.setNumero("1293809");
         factura.setFecha(date);
         factura.setRut("4.893.245-k");
-        //System.out.println(Bo.toString());
 
         OrdenCompra Pedido1 = new OrdenCompra(d,date,efectivo,Bo);
         //Se pueden agregar más de un DetalleOrden a una OrdenCompra
@@ -46,9 +43,7 @@ public class Main {
 
 
         Tarjeta tarjeta = new Tarjeta(3500, date, "Tarjeta de credito con 100%de interes", "#42069");
-        //System.out.println(tarjeta.toString());
         Transferencia transferencia = new Transferencia(6500, date, "Banko","#69420");
-        //System.out.println(transferencia.toString());
         OrdenCompra Pedido2 = new OrdenCompra(c,date,tarjeta,factura);
         OrdenCompra Pedido3 = new OrdenCompra(d,date, transferencia,Bo);
         OrdenCompra Pedido4 = new OrdenCompra(detalleOrden4,date,efectivo2,factura);
@@ -74,17 +69,6 @@ public class Main {
         System.out.println("Vuelto de compra con efectivo de segundo cliente: "+efectivo2.calcDevolucion(Pedido4.getPagos(),Pedido4.calcPrecio())+ "\n");
 
 
-
-
-
-/*
-        System.out.println(Pedido1.calcPrecio());
-        System.out.println(Pedido1.calcIVA());
-        System.out.println(Pedido1.calcPrecioSinIVA());
-        System.out.println(d.getCantidad());
-
-
- */
 
     }
 }

@@ -13,13 +13,6 @@ public class Pago {
         this.monto = monto;
         this.fecha = fecha;
     }
-    /*
-    public String tipoPago(Efectivo efectivo){
-
-    }
-
-     */
-
     @Override
     public String toString() {
         return "Pago{" +
