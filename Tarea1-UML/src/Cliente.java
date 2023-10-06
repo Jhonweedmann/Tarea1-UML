@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Cliente {
@@ -5,12 +6,15 @@ public class Cliente {
     private String rut;
     private Direccion direccion;
     private OrdenCompra ordenCompra;
+    private ArrayList <OrdenCompra> Lista;
 
     public Cliente(String nombre, String rut, Direccion direccion, OrdenCompra ordenCompra) {
         this.nombre = nombre;
         this.rut = rut;
         this.direccion = direccion;
         this.ordenCompra = ordenCompra;
+        Lista = new ArrayList<>();
+        Lista.add(ordenCompra);
     }
 /*
     public Cliente(String nombre, String rut) {
@@ -38,17 +42,38 @@ public class Cliente {
     public String getRut() {
         return rut;
     }
+    public void addOrdenCompra(OrdenCompra OC){
+        Lista.add(OC);
+    }
+    public String getLista(){
+        String temp = " ";
+        for(int i=0;i<Lista.size();i++){
+            temp += Lista.get(i).toString();
+            temp += "\n";
+            //System.out.println();
+        }
+        return temp;
+    }
 
 
 
     @Override
     public String toString() {
-        return "Cliente{\n" +
-                "nombre= '" + nombre + '\'' + "\n" +
-                "rut= '" + rut + '\'' + "\n" +
-                "direccion= " + direccion.getDireccion() + "\n" +
-                "ordenCompra= {" + ordenCompra.toString() + "\n" +
-                '}';
+        if(Lista.size() == 1){
+            return "Cliente{\n" +
+                    "nombre= '" + nombre + '\'' + "\n" +
+                    "rut= '" + rut + '\'' + "\n" +
+                    "direccion= " + direccion.getDireccion() + "\n" +
+                    "Orden de Compra= { \n" + getLista() + "\n" +
+                    '}';
+        }else{
+            return "Cliente{\n" +
+                    "nombre= '" + nombre + '\'' + "\n" +
+                    "rut= '" + rut + '\'' + "\n" +
+                    "direccion= " + direccion.getDireccion() + "\n" +
+                    "Ordenes de Compra= { \n" + getLista() + "\n" +
+                    '}';
+        }
     }
 /*
     public String nosexd(){

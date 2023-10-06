@@ -31,7 +31,7 @@ public class DetalleOrden {
     public String toString() {
         return "\t DetalleOrden{" +
                 " " + a.toString() +
-                ", cantidad=" + cantidad +
+                ", cantidad= " + cantidad +
                 '}';
     }
 }

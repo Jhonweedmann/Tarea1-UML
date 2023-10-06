@@ -71,9 +71,9 @@ public class OrdenCompra {
                 //", articulo=" + articulo +
                 //", fecha=" + fecha.toString() +
                 //", estado='" + estado + '\'' +
-                "\n" + getLista() +
-                "docTributario=" + docTributario +
-                "pago=" + pago +
-                '}';
+                "Orden de Compra: \n" + getLista() +
+                //"docTributario=" + docTributario +
+                //"pago=" + pago +
+                "\t"+'}';
     }
 }
