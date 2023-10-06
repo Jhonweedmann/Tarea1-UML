@@ -46,6 +46,7 @@ public class Cliente {
     public void addOrdenCompra(OrdenCompra OC){
         Lista.add(OC);
     }
+    //funcion necesaria para escribir todos los toString de Ordenes de compra asociada a este cliemnte"
     public String getLista(){
         String temp = " ";
         for(int i=0;i<Lista.size();i++){
@@ -57,7 +58,7 @@ public class Cliente {
     }
 
 
-
+// El toString de Cliente por referencias es el Principal toString, osea que con solo llamar a este toString se obtiene toda la informacion asociada a un cliente, a excepcion del vuelto por temas de tiempo"
     @Override
     public String toString() {
         if(Lista.size() == 1){
