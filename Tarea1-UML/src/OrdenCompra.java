@@ -26,9 +26,11 @@ public class OrdenCompra {
         ListaPagos.add(pago);
     }
 
+    //Nos permite agregar más de un DetalleOrden
     public void addDetalleOrden(DetalleOrden DO2){
         Lista.add(DO2);
     }
+    //Nos permite agregar más de un Pago
     public void addPago(Pago pago02){ ListaPagos.add(pago02);}
     public float calcPrecioSinIVA(){
         int sum = 0;
@@ -59,6 +61,8 @@ public class OrdenCompra {
         return sum;
     }
 
+
+    //Entrega el toString de todas los DetallesOrden asociados a este cliente
     public String getLista(){
         String temp = " ";
         for(int i=0;i<Lista.size();i++){
@@ -70,7 +74,7 @@ public class OrdenCompra {
     }
 
 
-    //obtiene la lista de pagos
+    //obtiene el monto de la lista de pagos
     public float getPagos(){
         float sum = 0;
         //if(ListaPagos.get(0) == pago)

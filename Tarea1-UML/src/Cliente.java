@@ -16,15 +16,6 @@ public class Cliente {
         Lista = new ArrayList<>();
         Lista.add(ordenCompra);
     }
-/*
-    public Cliente(String nombre, String rut) {
-        this.nombre = nombre;
-        this.rut = rut;
-    }
-
- */
-
-
     public String getDireccion() {
         return direccion.getDireccion();
     }
@@ -46,6 +37,7 @@ public class Cliente {
     public void addOrdenCompra(OrdenCompra OC){
         Lista.add(OC);
     }
+
     //funcion necesaria para escribir todos los toString de Ordenes de compra asociada a este cliemnte"
     public String getLista(){
         String temp = " ";
@@ -78,10 +70,4 @@ public class Cliente {
                     '}';
         }
     }
-/*
-    public String nosexd(){
-        ordenCompra.toString();
-    }
-
- */
 }
